@@ -1,0 +1,283 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(45deg, #ff6b6b, #ff9f1c, #4caf50);
+  background-size: 400% 400%;
+  animation: gradient-animation 15s ease infinite;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Gradient Animation */
+@keyframes gradient-animation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Centering the content */
+.container {
+  width: 100%;
+  max-width: 600px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  color: white;
+  margin: 20px;
+  overflow: hidden;
+}
+
+h2 {
+  font-size: 2rem;
+  color: #fff;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+input,
+button {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  margin: 10px 0;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+input:focus,
+button:focus {
+  outline: none;
+}
+
+input {
+  background-color: rgba(255, 255, 255, 0.3);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+button {
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button.bg-green {
+  background-color: #4caf50;
+}
+
+button.bg-blue {
+  background-color: #007bff;
+}
+
+button.bg-green:hover {
+  background-color: #388e3c;
+}
+
+button.bg-blue:hover {
+  background-color: #0056b3;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Updated list item styles */
+li {
+  background-color: rgba(255, 255, 255, 0.4);
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  gap: 10px;
+}
+
+/* Student info container */
+li > div {
+  flex: 1;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Updated remove button styles */
+li button {
+  background-color: #f44336;
+  padding: 8px 12px;
+  font-size: 0.9rem;
+  border-radius: 8px;
+  width: auto;
+  min-width: 80px;
+  margin: 0;
+  flex-shrink: 0;
+}
+
+li button:hover {
+  background-color: #d32f2f;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal.show {
+  display: flex;
+}
+
+.modal-content {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 30px;
+  border-radius: 12px;
+  color: #333;
+  width: 300px;
+  text-align: center;
+}
+
+.modal-header h3 {
+  color: #f44336;
+}
+
+.modal-footer {
+  margin-top: 20px;
+}
+
+.modal-footer .close {
+  background-color: #f44336;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.modal-footer .close:hover {
+  background-color: #d32f2f;
+}
+
+/* Toast Notifications */
+.Toastify__toast--success {
+  background-color: #4caf50;
+  color: white;
+}
+
+.Toastify__toast--error {
+  background-color: #f44336;
+  color: white;
+}
+
+.Toastify__toast--info {
+  background-color: #007bff;
+  color: white;
+}
+
+.Toastify__toast--default {
+  background-color: #333;
+  color: white;
+}
+
+/* Search Section Styles */
+.search-section {
+  margin: 20px 0;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+}
+
+.search-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.search-container input {
+  flex: 1;
+  margin: 0;
+}
+
+.search-container button {
+  width: auto;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.search-result {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 15px;
+}
+
+.student-card {
+  background: rgba(255, 255, 255, 0.3);
+  padding: 10px;
+  border-radius: 6px;
+  margin-top: 10px;
+}
+
+.student-card p {
+  margin: 5px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    margin: 15px;
+    padding: 15px;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+  }
+
+  input,
+  button {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+
+  .modal-content {
+    width: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 10px;
+    width: 100%;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+  }
+
+  input,
+  button {
+    padding: 8px;
+    font-size: 0.85rem;
+  }
+}
