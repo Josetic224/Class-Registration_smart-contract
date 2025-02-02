@@ -78,6 +78,7 @@ export default function ClassRegistration() {
         fetchStudents(); // Refresh students list after registration
       } catch (error) {
         console.error("Error registering student:", error);
+        toast.error("You don't have permissions to perform this");
         setShowModal(true); // Show modal on error
       }
     }
